@@ -9,7 +9,7 @@ import pandas as pd
 # from flask_caching import Cache
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+import torch_cpu
 
 ###### Define app & cache ##########
 # VAPOR, LUX, QUARTZ
@@ -39,7 +39,6 @@ server = app.server
 #     model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 #     return tokenizer, model
 
-# initally I used DialoGPT-medium but slug size was too large in heroku
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-small")
 model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-small")
 
@@ -125,9 +124,9 @@ navbar = dbc.NavbarSimple(
     dark=True,
 )
 
-description = """
-Blah
-"""
+# description = """
+# TODO: fill in description
+# """
 
 # app.layout = [navbar, dbc.Container()]
 app.layout = html.Div([navbar, 

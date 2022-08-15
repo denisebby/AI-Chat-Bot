@@ -204,7 +204,6 @@ def clear_input(n_clicks, n_submit):
     [Input("submit", "n_clicks"), Input("user-input", "n_submit")],
     [State("user-input", "value"), State("store-conversation", "data")],
 )
-
 def run_chatbot_2(n_clicks, n_submit, user_input, chat_history):
     print(f"n_clicks: {n_clicks}, n_submit: {n_submit}")
     if n_clicks == 0 and n_submit is None:
