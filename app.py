@@ -45,7 +45,7 @@ model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-small")
 #####################################
 
 ###### Chat bot functions ###########
-def textbox(text, box="AI", name="Philippe"):
+def textbox(text, box="AI", name="Denis"):
     text = text.replace(f"{name}:", "").replace("You:", "")
     style = {
         "max-width": "60%",
@@ -160,6 +160,7 @@ app.layout = html.Div([navbar,
     
     
     dcc.Store(id="store-conversation", data=""),
+    dcc.Store(id="store-conversation-ids", data=""),
     conversation,
     controls,
     dbc.Spinner(html.Div(id="loading-component"))
@@ -211,18 +212,18 @@ def clear_input(n_clicks, n_submit):
 #     return chat_history, None
     
 @app.callback(
-    [Output("store-conversation", "data"), Output("loading-component", "children")],
+    [Output("store-conversation", "data"), Output("store-conversation-ids", "data"), Output("loading-component", "children")],
     [Input("submit", "n_clicks"), Input("user-input", "n_submit")],
-    [State("user-input", "value"), State("store-conversation", "data")],
+    [State("user-input", "value"), State("store-conversation", "data"), State("store-conversation-ids", "data") ],
 )
-def run_chatbot(n_clicks, n_submit, user_input, chat_history):
+def run_chatbot(n_clicks, n_submit, user_input, chat_history, chat_history_ids):
     if n_clicks == 0 and n_submit is None:
         return "", None
 
     if user_input is None or user_input == "":
         return chat_history, None
     
-    name = "Pete"
+    name = "Denis"
     
     # encode the new user input, add the eos_token and return a tensor in Pytorch
     new_user_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
@@ -255,7 +256,7 @@ def run_chatbot(n_clicks, n_submit, user_input, chat_history):
 
     chat_history += f"{model_output}<split>"
 
-    return chat_history, None
+    return chat_history, chat_history_ids, None
 
 
 if __name__=='__main__':
