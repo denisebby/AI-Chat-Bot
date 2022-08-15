@@ -1,0 +1,149 @@
+e: -----> Building on the Heroku-20 stack
+remote: -----> Using buildpack: heroku/python
+remote: -----> Python app detected
+remote: -----> Using Python version specified in runtime.txt
+remote:  !     Python has released a security update! Please consider upgrading to python-3.8.13
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.8.10
+remote: -----> Installing pip 22.1.2, setuptools 60.10.0 and wheel 0.37.1
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting dash==2.6.0
+remote:          Downloading dash-2.6.0-py3-none-any.whl (9.8 MB)
+remote:        Collecting dash_bootstrap_components==1.2.0
+remote:          Downloading dash_bootstrap_components-1.2.0-py3-none-any.whl (216 kB)
+remote:        Collecting pandas==1.4.1
+remote:          Downloading pandas-1.4.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+remote:        Collecting pandas_datareader==0.10.0
+remote:          Downloading pandas_datareader-0.10.0-py3-none-any.whl (109 kB)
+remote:        Collecting plotly==5.6.0
+remote:          Downloading plotly-5.6.0-py2.py3-none-any.whl (27.7 MB)
+remote:        Collecting torch==1.11.0
+remote:          Downloading torch-1.11.0-cp38-cp38-manylinux1_x86_64.whl (750.6 MB)
+remote:        Collecting transformers==4.18.0
+remote:          Downloading transformers-4.18.0-py3-none-any.whl (4.0 MB)
+remote:        Collecting gunicorn
+remote:          Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+remote:        Collecting dash-tools
+remote:          Downloading dash_tools-1.8.2-py3-none-any.whl (4.1 MB)
+remote:        Collecting dash-table==5.0.0
+remote:          Downloading dash_table-5.0.0-py3-none-any.whl (3.9 kB)
+remote:        Collecting dash-html-components==2.0.0
+remote:          Downloading dash_html_components-2.0.0-py3-none-any.whl (4.1 kB)
+remote:        Collecting Flask>=1.0.4
+remote:          Downloading Flask-2.2.2-py3-none-any.whl (101 kB)
+remote:        Collecting dash-core-components==2.0.0
+remote:          Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
+remote:        Collecting flask-compress
+remote:          Downloading Flask_Compress-1.12-py3-none-any.whl (7.9 kB)
+remote:        Collecting pytz>=2020.1
+remote:          Downloading pytz-2022.2.1-py2.py3-none-any.whl (500 kB)
+remote:        Collecting python-dateutil>=2.8.1
+remote:          Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+remote:        Collecting numpy>=1.18.5
+remote:          Downloading numpy-1.23.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+remote:        Collecting requests>=2.19.0
+remote:          Downloading requests-2.28.1-py3-none-any.whl (62 kB)
+remote:        Collecting lxml
+remote:          Downloading lxml-4.9.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (6.9 MB)
+remote:        Collecting tenacity>=6.2.0
+remote:          Downloading tenacity-8.0.1-py3-none-any.whl (24 kB)
+remote:        Collecting six
+remote:          Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+remote:        Collecting typing-extensions
+remote:          Downloading typing_extensions-4.3.0-py3-none-any.whl (25 kB)
+remote:        Collecting packaging>=20.0
+remote:          Downloading packaging-21.3-py3-none-any.whl (40 kB)
+remote:        Collecting tqdm>=4.27
+remote:          Downloading tqdm-4.64.0-py2.py3-none-any.whl (78 kB)
+remote:        Collecting tokenizers!=0.11.3,<0.13,>=0.11.1
+remote:          Downloading tokenizers-0.12.1-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.6 MB)
+remote:        Collecting sacremoses
+remote:          Downloading sacremoses-0.0.53.tar.gz (880 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting regex!=2019.12.17
+remote:          Downloading regex-2022.7.25-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (768 kB)
+remote:        Collecting pyyaml>=5.1
+remote:          Downloading PyYAML-6.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (701 kB)
+remote:        Collecting filelock
+remote:          Downloading filelock-3.8.0-py3-none-any.whl (10 kB)
+remote:        Collecting huggingface-hub<1.0,>=0.1.0
+remote:          Downloading huggingface_hub-0.8.1-py3-none-any.whl (101 kB)
+remote:        Collecting setuptools>=3.0
+remote:          Downloading setuptools-47.1.0-py3-none-any.whl (583 kB)
+remote:        Collecting packaging>=20.0
+remote:          Downloading packaging-21.0-py3-none-any.whl (40 kB)
+remote:        Collecting pipreqs==0.4.11
+remote:          Downloading pipreqs-0.4.11-py2.py3-none-any.whl (32 kB)
+remote:        Collecting pre-commit==2.16.0
+remote:          Downloading pre_commit-2.16.0-py2.py3-none-any.whl (191 kB)
+remote:        Collecting yolk3k==0.9
+remote:          Downloading yolk3k-0.9.tar.gz (19 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting termcolor==1.1.0
+remote:          Downloading termcolor-1.1.0.tar.gz (3.9 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting pytest==6.2.2
+remote:          Downloading pytest-6.2.2-py3-none-any.whl (280 kB)
+remote:        Collecting pyparsing>=2.0.2
+remote:          Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+remote:        Collecting yarg
+remote:          Downloading yarg-0.1.9-py2.py3-none-any.whl (19 kB)
+remote:        Collecting docopt
+remote:          Downloading docopt-0.6.2.tar.gz (25 kB)
+remote:          Preparing metadata (setup.py): started
+remote:          Preparing metadata (setup.py): finished with status 'done'
+remote:        Collecting toml
+remote:          Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+remote:        Collecting cfgv>=2.0.0
+remote:          Downloading cfgv-3.3.1-py2.py3-none-any.whl (7.3 kB)
+remote:        Collecting virtualenv>=20.0.8
+remote:          Downloading virtualenv-20.16.3-py2.py3-none-any.whl (8.8 MB)
+remote:        Collecting nodeenv>=0.11.1
+remote:          Downloading nodeenv-1.7.0-py2.py3-none-any.whl (21 kB)
+remote:        Collecting identify>=1.0.0
+remote:          Downloading identify-2.5.3-py2.py3-none-any.whl (98 kB)
+remote:        Collecting attrs>=19.2.0
+remote:          Downloading attrs-22.1.0-py2.py3-none-any.whl (58 kB)
+remote:        Collecting pluggy<1.0.0a1,>=0.12
+remote:          Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)
+remote:        Collecting py>=1.8.2
+remote:          Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)
+remote:        Collecting iniconfig
+remote:          Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)
+remote:        Collecting itsdangerous>=2.0
+remote:          Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+remote:        Collecting Jinja2>=3.0
+remote:          Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+remote:        Collecting importlib-metadata>=3.6.0
+remote:          Downloading importlib_metadata-4.12.0-py3-none-any.whl (21 kB)
+remote:        Collecting click>=8.0
+remote:          Downloading click-8.1.3-py3-none-any.whl (96 kB)
+remote:        Collecting Werkzeug>=2.2.2
+remote:          Downloading Werkzeug-2.2.2-py3-none-any.whl (232 kB)
+remote:        Collecting certifi>=2017.4.17
+remote:          Downloading certifi-2022.6.15-py3-none-any.whl (160 kB)
+remote:        Collecting charset-normalizer<3,>=2
+remote:          Downloading charset_normalizer-2.1.0-py3-none-any.whl (39 kB)
+remote:        Collecting idna<4,>=2.5
+remote:          Downloading idna-3.3-py3-none-any.whl (61 kB)
+remote:        Collecting urllib3<1.27,>=1.21.1
+remote:          Downloading urllib3-1.26.11-py2.py3-none-any.whl (139 kB)
+remote:        Collecting brotli
+remote:          Downloading Brotli-1.0.9-cp38-cp38-manylinux1_x86_64.whl (357 kB)
+remote:        Collecting joblib
+remote:          Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+remote:        Collecting zipp>=0.5
+remote:          Downloading zipp-3.8.1-py3-none-any.whl (5.6 kB)
+remote:        Collecting MarkupSafe>=2.0
+remote:          Downloading MarkupSafe-2.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+remote:        Collecting platformdirs<3,>=2.4
+remote:          Downloading platformdirs-2.5.2-py3-none-any.whl (14 kB)
+remote:        Collecting distlib<1,>=0.3.5
+remote:          Downloading distlib-0.3.5-py2.py3-none-any.whl (466 kB)
+remote:        Building wheels for collected packages: termcolor, yolk3k, sacremoses, docopt
+remote:          Building wheel for termcolor (setup.py): started
+remote:          Building wheel for termcolor (setup.py): finished with status 'done'
