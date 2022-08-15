@@ -18,6 +18,9 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.QUARTZ],
                             'content': 'width=device-width, initial-scale=1.0'}]
                 )
 
+# IMPORTANT: this line is needed for deployment
+server = app.server 
+
 # cache = Cache(app.server, config={
 #     'CACHE_TYPE': 'filesystem',
 #     'CACHE_DIR': 'cache-directory'
