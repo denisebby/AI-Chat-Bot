@@ -39,8 +39,9 @@ server = app.server
 #     model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 #     return tokenizer, model
 
-tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+# initally I used DialoGPT-medium but slug size was too large in heroku
+tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-small")
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-small")
 
 #####################################
 
