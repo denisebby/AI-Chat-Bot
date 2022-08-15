@@ -9,7 +9,7 @@ import pandas as pd
 # from flask_caching import Cache
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch_cpu
+import torch
 
 ###### Define app & cache ##########
 # VAPOR, LUX, QUARTZ
