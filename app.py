@@ -106,19 +106,7 @@ controls = dbc.InputGroup(
 
 
 navbar = dbc.NavbarSimple(
-    children=[
-        dbc.DropdownMenu(
-            children=[
-                dbc.DropdownMenuItem("More pages", header=True),
-                dbc.DropdownMenuItem("Page 2", href="#"),
-                dbc.DropdownMenuItem("Page 3", href="#"),
-            ],
-            nav=True,
-            in_navbar=True,
-            label="More",
-        ),
-    ],
-    brand="Hugging Face Demo",
+    brand="Chat Bot Demo",
     brand_href="#",
     color="primary",
     dark=True,
@@ -218,10 +206,10 @@ def clear_input(n_clicks, n_submit):
 )
 def run_chatbot(n_clicks, n_submit, user_input, chat_history, chat_history_ids):
     if n_clicks == 0 and n_submit is None:
-        return "", None
+        return "", chat_history_ids, None
 
     if user_input is None or user_input == "":
-        return chat_history, None
+        return chat_history, chat_history_ids, None
     
     name = "Denis"
     
