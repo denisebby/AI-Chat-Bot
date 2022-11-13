@@ -170,7 +170,7 @@ app.layout = html.Div([navbar,
     Output("display-conversation", "children"), [Input("store-conversation", "data")]
 )
 def update_display(chat_history):
-    print("hi")
+ 
     return [
         textbox(x, box="user") if i % 2 == 0 else textbox(x, box="AI")
         for i, x in enumerate(chat_history.split("<split>")[:-1])
@@ -220,7 +220,8 @@ def run_chatbot(n_clicks, n_submit, user_input, chat_history, chat_history_ids):
         chat_history_ids = torch.empty(size=(1,1), dtype=torch.int64) #torch.empty(1,1)
         
     # append the new user input tokens to the chat history
-    bot_input_ids = torch.cat([chat_history_ids, new_user_input_ids], dim=-1) if n_submit else new_user_input_ids
+    # print([chat_history_ids, new_user_input_ids])
+    bot_input_ids = torch.cat([torch.Tensor(chat_history_ids).int(), new_user_input_ids], dim=-1) if n_submit else new_user_input_ids
 
     # generated a response while limiting the total chat history to 1000 tokens, 
     chat_history_ids = model.generate(bot_input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id)
@@ -240,7 +241,7 @@ def run_chatbot(n_clicks, n_submit, user_input, chat_history, chat_history_ids):
     # model_output = response.choices[0].text.strip()
     
     model_output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
-    print(model_output)
+    
 
     chat_history += f"{model_output}<split>"
 
@@ -248,5 +249,6 @@ def run_chatbot(n_clicks, n_submit, user_input, chat_history, chat_history_ids):
 
 
 if __name__=='__main__':
-    app.run_server(debug=True, port=8005)
+    app.run_server(debug=True, port=8006)
+
 
